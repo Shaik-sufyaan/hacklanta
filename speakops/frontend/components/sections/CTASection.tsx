@@ -10,20 +10,23 @@ export function CTASection() {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!email) return;
     setLoading(true);
+    setError(null);
     try {
-      await fetch('/api/waitlist', {
+      const res = await fetch('/api/waitlist', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),
       });
+      if (!res.ok) throw new Error('Failed to join waitlist. Please try again.');
       setSubmitted(true);
-    } catch {
-      setSubmitted(true); // still show success for demo
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
     } finally {
       setLoading(false);
     }
@@ -93,6 +96,16 @@ export function CTASection() {
               <div style={{ fontSize: '18px', fontWeight: 700, color: '#f0f6fc', marginBottom: '8px' }}>You're on the list!</div>
               <div style={{ fontSize: '14px', color: '#8b949e' }}>We'll reach out within 24 hours to get you set up.</div>
             </motion.div>
+          )}
+
+          {error && (
+            <motion.p
+              initial={{ opacity: 0, y: -6 }}
+              animate={{ opacity: 1, y: 0 }}
+              style={{ marginTop: '12px', fontSize: '13px', color: '#f87171', textAlign: 'center' }}
+            >
+              {error}
+            </motion.p>
           )}
 
           <motion.p variants={fadeUp} style={{ marginTop: '24px', fontSize: '13px', color: '#8b949e' }}>

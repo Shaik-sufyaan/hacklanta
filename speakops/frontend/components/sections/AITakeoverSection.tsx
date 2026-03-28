@@ -92,12 +92,18 @@ export function AITakeoverSection() {
           <motion.p variants={fadeUp} style={{ fontSize: '16px', lineHeight: 1.7, color: '#8b949e', marginBottom: '24px' }}>
             SpeakOps picks up in under 1 second. It knows your services, your schedule, and your business policies — handling calls the way you'd want them handled.
           </motion.p>
-          {['Books appointments in real-time', 'Sends SMS confirmations instantly', 'Escalates urgent calls to you', 'Works nights, weekends, holidays'].map((item, i) => (
-            <motion.div key={item} variants={fadeUp} style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
-              <div style={{ width: '20px', height: '20px', borderRadius: '50%', background: 'rgba(56,189,248,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                <span style={{ fontSize: '11px', color: '#38bdf8' }}>✓</span>
+          {[
+            { text: 'Books appointments in real-time', icon: '📅' },
+            { text: 'Sends SMS confirmations instantly', icon: '💬' },
+            { text: 'Escalates urgent calls to you', icon: '🔔' },
+            { text: 'Works nights, weekends, holidays', icon: '🌙' },
+            { text: 'Handles FAQs without human help', icon: '💡' },
+          ].map(({ text, icon }) => (
+            <motion.div key={text} variants={fadeUp} style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
+              <div style={{ width: '28px', height: '28px', borderRadius: '8px', background: 'rgba(56,189,248,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: '14px' }}>
+                {icon}
               </div>
-              <span style={{ fontSize: '14px', color: '#cbd5e1' }}>{item}</span>
+              <span style={{ fontSize: '14px', color: '#cbd5e1' }}>{text}</span>
             </motion.div>
           ))}
         </motion.div>

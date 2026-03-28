@@ -93,3 +93,32 @@ export const cardFloat: Variants = {
     transition: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
   },
 };
+
+export const bounceIn: Variants = {
+  hidden: { opacity: 0, scale: 0.6 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { type: 'spring', stiffness: 500, damping: 28 },
+  },
+};
+
+export const blurUp: Variants = {
+  hidden: { opacity: 0, y: 30, filter: 'blur(10px)' },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: 'blur(0px)',
+    transition: { duration: DURATIONS.slow, ease: EASING.spring },
+  },
+};
+
+export const rotateIn: Variants = {
+  hidden: { opacity: 0, rotate: -8, scale: 0.9 },
+  visible: {
+    opacity: 1,
+    rotate: 0,
+    scale: 1,
+    transition: { duration: DURATIONS.slow, ease: EASING.spring },
+  },
+};

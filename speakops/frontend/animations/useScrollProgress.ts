@@ -27,9 +27,14 @@ export function useScrollProgress() {
         start: 'top top',
         end: 'bottom bottom',
         onUpdate: (self) => {
+          // Guard: progress can be NaN on some browsers before layout is complete
+          if (!Number.isFinite(self.progress)) {
+            console.warn('[useScrollProgress] Non-finite scroll progress detected, skipping frame');
+            return;
+          }
           const total = self.progress * TOTAL_SCENES;
           const sceneIndex = Math.min(Math.floor(total), TOTAL_SCENES - 1);
-          const sceneProgress = total - Math.floor(total);
+          const sceneProgress = Math.min(Math.max(total - Math.floor(total), 0), 1);
           setScene(sceneIndex, sceneProgress);
         },
       });

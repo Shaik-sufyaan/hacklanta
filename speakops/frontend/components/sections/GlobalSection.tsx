@@ -12,6 +12,9 @@ const LANGUAGES = [
   { word: 'नमस्ते', lang: 'Hindi', flag: '🇮🇳' },
   { word: 'こんにちは', lang: 'Japanese', flag: '🇯🇵' },
   { word: 'Olá', lang: 'Portuguese', flag: '🇧🇷' },
+  { word: '你好', lang: 'Mandarin', flag: '🇨🇳' },
+  { word: 'Ciao', lang: 'Italian', flag: '🇮🇹' },
+  { word: 'Merhaba', lang: 'Turkish', flag: '🇹🇷' },
 ];
 
 export function GlobalSection() {
@@ -65,7 +68,7 @@ export function GlobalSection() {
 
           {/* Stats */}
           <div style={{ display: 'flex', gap: '24px' }}>
-            {[{ val: '29+', label: 'Languages' }, { val: '140+', label: 'Countries' }].map((s) => (
+            {[{ val: '29+', label: 'Languages' }, { val: '140+', label: 'Countries' }, { val: '99.2%', label: 'Accuracy' }].map((s) => (
               <div key={s.label} style={{ textAlign: 'center' }}>
                 <div style={{ fontSize: '28px', fontWeight: 800, color: '#38bdf8', fontFamily: 'var(--font-display)' }}>{s.val}</div>
                 <div style={{ fontSize: '11px', color: '#8b949e' }}>{s.label}</div>

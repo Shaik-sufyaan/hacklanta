@@ -51,13 +51,18 @@ export function LandingNav() {
 
       {/* Nav links */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '32px' }}>
-        {['Product', 'Pricing', 'Docs'].map((label) => (
-          <span key={label} style={{ fontSize: '14px', color: '#8b949e', cursor: 'pointer', transition: 'color 0.2s' }}
+        {[
+          { label: 'Product', href: '#product' },
+          { label: 'Pricing', href: '#pricing' },
+          { label: 'Integrations', href: '#integrations' },
+          { label: 'Docs', href: '#docs' },
+        ].map(({ label, href }) => (
+          <a key={label} href={href} style={{ fontSize: '14px', color: '#8b949e', cursor: 'pointer', transition: 'color 0.2s', textDecoration: 'none' }}
             onMouseEnter={(e) => (e.currentTarget.style.color = '#f0f6fc')}
             onMouseLeave={(e) => (e.currentTarget.style.color = '#8b949e')}
           >
             {label}
-          </span>
+          </a>
         ))}
       </div>
 

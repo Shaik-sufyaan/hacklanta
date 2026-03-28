@@ -38,19 +38,24 @@ export const DURATIONS = {
   normal: 0.5,
   slow: 1.0,
   scene: 1.5,
+  stagger: 0.08,
 } as const;
 
+// Scroll thresholds — progress value at which each scene becomes "active"
+export const SCENE_THRESHOLDS = [0, 0.11, 0.22, 0.33, 0.44, 0.55, 0.66, 0.77, 0.88] as const;
+
 // 9 camera positions — one per scene
+// position: [x, y, z], fov in degrees, lerpFactor controls blend speed
 export const CAMERA_PRESETS = [
-  { position: [0, 0, 6] as [number, number, number], fov: 60 },   // 0: Hero
-  { position: [0, 2, 8] as [number, number, number], fov: 55 },   // 1: Problem
-  { position: [0, 0, 5] as [number, number, number], fov: 58 },   // 2: AI Takeover
-  { position: [0, 0, 5] as [number, number, number], fov: 55 },   // 3: Training
-  { position: [0, 0, 7] as [number, number, number], fov: 50 },   // 4: Actions
-  { position: [0, 0, 6] as [number, number, number], fov: 55 },   // 5: Global
-  { position: [0, 0, 6] as [number, number, number], fov: 52 },   // 6: Dashboard
-  { position: [0, 0, 7] as [number, number, number], fov: 55 },   // 7: Comparison
-  { position: [0, 0, 4] as [number, number, number], fov: 45 },   // 8: CTA (zoom in)
+  { position: [0, 0, 6]  as [number, number, number], fov: 60, lerpFactor: 0.04 },  // 0: Hero
+  { position: [0, 2, 8]  as [number, number, number], fov: 55, lerpFactor: 0.03 },  // 1: Problem
+  { position: [0, 0, 5]  as [number, number, number], fov: 58, lerpFactor: 0.05 },  // 2: AI Takeover
+  { position: [0, 1, 5]  as [number, number, number], fov: 55, lerpFactor: 0.04 },  // 3: Training
+  { position: [0, 0, 7]  as [number, number, number], fov: 50, lerpFactor: 0.03 },  // 4: Actions
+  { position: [0, 0, 6]  as [number, number, number], fov: 55, lerpFactor: 0.04 },  // 5: Global
+  { position: [0, 0.5, 6] as [number, number, number], fov: 52, lerpFactor: 0.04 }, // 6: Dashboard
+  { position: [0, 0, 7]  as [number, number, number], fov: 55, lerpFactor: 0.03 },  // 7: Comparison
+  { position: [0, 0, 4]  as [number, number, number], fov: 45, lerpFactor: 0.06 },  // 8: CTA (zoom in)
 ] as const;
 
 export const TOTAL_SCENES = 9;

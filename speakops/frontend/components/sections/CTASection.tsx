@@ -98,6 +98,22 @@ export function CTASection() {
           <motion.p variants={fadeUp} style={{ marginTop: '24px', fontSize: '13px', color: '#8b949e' }}>
             No credit card required · Setup in 15 minutes · Cancel anytime
           </motion.p>
+
+          {/* Testimonial */}
+          <motion.div variants={fadeUp} style={{ marginTop: '48px', padding: '24px 28px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '20px', maxWidth: '520px', margin: '48px auto 0' }}>
+            <p style={{ fontSize: '15px', lineHeight: 1.7, color: '#c9d1d9', fontStyle: 'italic', marginBottom: '16px' }}>
+              "We went from missing 30% of our calls to answering 100% of them. SpeakOps basically hired us a receptionist that works nights and weekends."
+            </p>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'linear-gradient(135deg, #38bdf8, #2dd4bf)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '16px' }}>
+                💆
+              </div>
+              <div>
+                <div style={{ fontSize: '13px', fontWeight: 600, color: '#f0f6fc' }}>Dr. Priya Nair</div>
+                <div style={{ fontSize: '11px', color: '#8b949e' }}>Owner, Serenity Wellness Clinic · Atlanta, GA</div>
+              </div>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

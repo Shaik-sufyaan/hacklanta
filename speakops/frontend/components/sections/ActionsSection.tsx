@@ -37,6 +37,22 @@ const ACTIONS = [
     color: '#38bdf8',
     glow: 'rgba(56,189,248,0.12)',
   },
+  {
+    icon: '📝',
+    title: 'Call Transcript Saved',
+    desc: '3m 42s · Full transcript',
+    detail: 'Keyword flags: "reschedule", "discount", "urgent"',
+    color: '#2dd4bf',
+    glow: 'rgba(45,212,191,0.12)',
+  },
+  {
+    icon: '🔔',
+    title: 'Owner Notified',
+    desc: 'Push + Email sent',
+    detail: 'High-priority callback flagged by AI',
+    color: '#7dd3fc',
+    glow: 'rgba(125,211,252,0.12)',
+  },
 ];
 
 function ActionCard({ action, index }: { action: typeof ACTIONS[0]; index: number }) {
@@ -91,7 +107,7 @@ export function ActionsSection() {
             </p>
           </motion.div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
             {ACTIONS.map((action, i) => (
               <ActionCard key={i} action={action} index={i} />
             ))}

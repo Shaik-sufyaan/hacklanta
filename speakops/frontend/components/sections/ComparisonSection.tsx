@@ -10,6 +10,7 @@ const HUMAN = [
   { label: 'Response time', value: '3s hold', sub: 'When not busy' },
   { label: 'Error rate', value: '15%', sub: 'Avg human error' },
   { label: 'Languages', value: '1–2', sub: 'Limited' },
+  { label: 'Scales with volume', value: 'No', sub: 'Hire more staff' },
 ];
 
 const AI = [
@@ -18,6 +19,7 @@ const AI = [
   { label: 'Response time', value: 'Instant', sub: '< 1 second' },
   { label: 'Error rate', value: '0.3%', sub: 'Consistent' },
   { label: 'Languages', value: '29+', sub: 'Auto-detected' },
+  { label: 'Scales with volume', value: 'Yes', sub: 'Unlimited concurrent' },
 ];
 
 export function ComparisonSection() {
@@ -87,6 +89,17 @@ export function ComparisonSection() {
             </motion.div>
           </div>
         </motion.div>
+
+        {/* Bottom tagline */}
+        <motion.p
+          variants={fadeUp}
+          initial="hidden"
+          animate={isInView ? 'visible' : 'hidden'}
+          style={{ textAlign: 'center', marginTop: '32px', fontSize: '14px', color: '#8b949e' }}
+        >
+          SpeakOps pays for itself after{' '}
+          <span style={{ color: '#38bdf8', fontWeight: 600 }}>the first 3 bookings.</span>
+        </motion.p>
       </div>
     </section>
   );

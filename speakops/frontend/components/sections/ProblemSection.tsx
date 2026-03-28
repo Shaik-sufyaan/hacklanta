@@ -5,12 +5,13 @@ import { motion, useInView } from 'framer-motion';
 import { fadeUp, staggerContainer } from '@/animations/variants';
 
 const MISSED_CALLS = [
-  { time: '9:03 AM', name: 'Sarah M.', note: 'Appointment inquiry' },
-  { time: '10:17 AM', name: 'David K.', note: 'Pricing question' },
-  { time: '11:42 AM', name: 'Clinic HQ', note: 'Urgent reschedule' },
-  { time: '1:08 PM', name: 'Unknown', note: 'Left no voicemail' },
-  { time: '2:55 PM', name: 'Ana R.', note: 'New patient intake' },
-  { time: '4:31 PM', name: 'James T.', note: 'Payment dispute' },
+  { time: '9:03 AM', name: 'Sarah M.', note: 'Appointment inquiry', lost: '$120' },
+  { time: '10:17 AM', name: 'David K.', note: 'Pricing question', lost: '$85' },
+  { time: '11:42 AM', name: 'Clinic HQ', note: 'Urgent reschedule', lost: '$200' },
+  { time: '1:08 PM', name: 'Unknown', note: 'Left no voicemail', lost: '$—' },
+  { time: '2:55 PM', name: 'Ana R.', note: 'New patient intake', lost: '$340' },
+  { time: '4:31 PM', name: 'James T.', note: 'Payment dispute', lost: '$175' },
+  { time: '5:48 PM', name: 'Marcus L.', note: 'Group booking', lost: '$460' },
 ];
 
 function MissedCallCard({ call, index }: { call: typeof MISSED_CALLS[0]; index: number }) {
@@ -18,7 +19,7 @@ function MissedCallCard({ call, index }: { call: typeof MISSED_CALLS[0]; index: 
     <motion.div
       initial={{ opacity: 0, x: -30 }}
       animate={{ opacity: 1, x: 0 }}
-      transition={{ delay: index * 0.15, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ delay: index * 0.12, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
       style={{
         display: 'flex', alignItems: 'center', gap: '12px',
         padding: '12px 16px',
@@ -35,8 +36,9 @@ function MissedCallCard({ call, index }: { call: typeof MISSED_CALLS[0]; index: 
         <div style={{ fontSize: '13px', fontWeight: 600, color: '#f0f6fc' }}>{call.name}</div>
         <div style={{ fontSize: '11px', color: '#8b949e' }}>{call.note}</div>
       </div>
-      <div style={{ fontSize: '11px', color: '#ef4444', fontWeight: 500 }}>{call.time}</div>
-      <span style={{ fontSize: '10px', padding: '2px 8px', borderRadius: '20px', background: 'rgba(239,68,68,0.15)', color: '#ef4444', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+      <div style={{ fontSize: '11px', color: '#ef4444', fontWeight: 600 }}>{call.lost}</div>
+      <div style={{ fontSize: '11px', color: '#6b7280', fontWeight: 400 }}>{call.time}</div>
+      <span style={{ fontSize: '10px', padding: '2px 8px', borderRadius: '20px', background: 'rgba(239,68,68,0.15)', color: '#ef4444', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase', flexShrink: 0 }}>
         Missed
       </span>
     </motion.div>

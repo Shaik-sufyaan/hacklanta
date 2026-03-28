@@ -1,0 +1,24 @@
+:root {
+  --canvas: #f8f1e5;
+  --ink: #18202a;
+  --line: rgba(24, 32, 42, 0.12);
+  --accent: #ff6b3d;
+  --accent-soft: rgba(255, 107, 61, 0.14);
+  --warm: #f5d8a8;
+  --panel: rgba(255, 255, 255, 0.72);
+}
+
+/* Landing page dark theme — scoped to [data-theme="landing"] wrapper */
+[data-theme="landing"] {
+  --landing-bg: #0d1117;
+  --landing-accent: #38bdf8;
+  --landing-teal: #2dd4bf;
+  --landing-soft: #7dd3fc;
+  --landing-text: #f0f6fc;
+  --landing-muted: #8b949e;
+  --landing-glass: rgba(255, 255, 255, 0.04);
+  --landing-glass-border: rgba(56, 189, 248, 0.15);
+  --landing-glow: 0 0 60px rgba(56, 189, 248, 0.25);
+  --landing-glow-teal: 0 0 60px rgba(45, 212, 191, 0.2);
+  --landing-glow-sm: 0 0 30px rgba(56, 189, 248, 0.2);
+}

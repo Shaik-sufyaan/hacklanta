@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+speakops/node_modules/
+speakops/frontend/.next/
+speakops/frontend/node_modules/
+
+# Environment
+.env
+.env.local
+.env.*.local
+speakops/.env
+speakops/frontend/.env.local
+
+# Build outputs
+speakops/dist/
+speakops/frontend/out/
+
+# Misc
+.DS_Store
+*.log
+.claude/

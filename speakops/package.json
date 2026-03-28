@@ -1,0 +1,28 @@
+{
+  "name": "speakops",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "bun --watch src/index.ts",
+    "build": "bun build ./src/index.ts --target bun --outdir dist",
+    "start": "bun run dist/index.js",
+    "test": "bun test",
+    "check": "bunx tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@elysiajs/cors": "^1.1.1",
+    "elysia": "^1.1.26",
+    "firebase-admin": "^13.1.0",
+    "framer-motion": "^12.38.0",
+    "pg": "^8.13.1"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.2.8",
+    "@types/node": "^22.13.14",
+    "typescript": "^5.8.2"
+  }
+}
